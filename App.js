@@ -1,33 +1,33 @@
 import React from 'react';
-import {NativeRouter, Route, Link} from 'react-router-native';
+import {StyleSheet} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 import BottomBar from './src/components/bottom-bar';
-import {StyleSheet, View, Text} from 'react-native';
-import routes from './src/utils/routes';
+import HomePage from './src/pages/home';
+import DummyPage from './src/pages/dummy';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
-    <NativeRouter>
-      <View style={styles.container}>
-        {routes.map((route, index) => {
-          const {path, exact} = route;
-          return (
-            <Route
-              key={index}
-              path={path}
-              exact={exact}
-              render={(props) => <route.component {...props} />}
-            />
-          );
-        })}
-
-        <BottomBar routes={routes} />
-      </View>
-    </NativeRouter>
+    <NavigationContainer>
+      <Tab.Navigator tabBar={(props) => <BottomBar {...props} />}>
+        <Tab.Screen name="Home" component={HomePage} />
+        <Tab.Screen name="Notifikasi" component={DummyPage} />
+        <Tab.Screen name="Life" component={DummyPage} />
+        <Tab.Screen name="Pesanan" component={DummyPage} />
+        <Tab.Screen name="Profil Saya" component={DummyPage} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  black: {
+    backgroundColor: '#ccc',
     flex: 1,
   },
 });

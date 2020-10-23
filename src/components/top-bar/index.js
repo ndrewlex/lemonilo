@@ -1,18 +1,29 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View, TextInput} from 'react-native';
 import {colors} from '../../utils/themes';
 import SearchLogo from '../../assets/top-menu/search.svg';
+import ChatLogo from '../../assets/top-menu/chatbox.svg';
 
-const TopBar = () => {
+const TopBar = (props = {}) => {
+  const {onFocus, onChange, isEditable = true} = props;
   return (
     <View style={styles.container}>
-      <View style={styles.textInput}>
+      <View style={styles.wrapperInput}>
         <View style={styles.searchLogo}>
           <SearchLogo height={22} width={22} />
-          {/* <Image style={styles.icQr} source={icQrCode} /> */}
         </View>
-        <View style={styles.hintWrapper}>
-          <Text style={styles.hint}>Search offers, food, and places to go</Text>
+        <View style={styles.inputText}>
+          <TextInput
+            placeholder="Cari produk sehat dan natural"
+            onFocus={onFocus}
+            onChangeText={onChange}
+            editable={isEditable}
+          />
+        </View>
+      </View>
+      <View style={styles.wrapperChat}>
+        <View style={styles.chatLogo}>
+          <ChatLogo height={30} width={30} />
         </View>
       </View>
     </View>
@@ -21,15 +32,18 @@ const TopBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingVertical: 10,
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: colors.green,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 65,
   },
-  textInput: {
-    height: 35,
+
+  wrapperInput: {
+    height: '100%',
+    flex: 8,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -38,6 +52,29 @@ const styles = StyleSheet.create({
     borderColor: colors.gray,
     backgroundColor: colors.white,
     borderWidth: 1,
+    marginHorizontal: 10,
+  },
+
+  inputText: {
+    flex: 8,
+  },
+
+  searchLogo: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  wrapperChat: {
+    height: '100%',
+    marginRight: 10,
+    flex: 1,
+  },
+
+  chatLogo: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   hintWrapper: {
@@ -48,19 +85,7 @@ const styles = StyleSheet.create({
 
   hint: {
     color: colors.gray,
-    // textAlign: 'center',
   },
-
-  searchLogo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  // icQr: {
-  //   width: 24,
-  //   height: 24
-  // }
 });
 
 export default TopBar;

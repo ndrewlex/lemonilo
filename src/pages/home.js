@@ -1,7 +1,11 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, Image} from 'react-native';
 import Carousel from './../components/carousel';
 import Topbar from './../components/top-bar';
+import {slideStyles} from './../components/carousel/slide';
+import imageBanner from './../assets/banner/banner.png';
+import MainMenu from '../components/main-menu';
+
 const HomePage = () => {
   return (
     <ScrollView>
@@ -9,16 +13,17 @@ const HomePage = () => {
       <Carousel
         items={[
           {
-            title: 'Welcome, swipe to continue.',
+            image: <Image style={slideStyles.slideImg} source={imageBanner} />,
           },
           {
-            title: 'About feature X.',
+            image: <Image style={slideStyles.slideImg} source={imageBanner} />,
           },
           {
-            title: 'About feature Y.',
+            image: <Image style={slideStyles.slideImg} source={imageBanner} />,
           },
         ]}
       />
+      <MainMenu />
     </ScrollView>
   );
 };

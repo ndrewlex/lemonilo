@@ -1,20 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 const Slide = (props) => {
-  const {title} = props;
-
-  return (
-    <View style={styles.slide}>
-      <Text style={{...styles.slideText}}>{title}</Text>
-    </View>
-  );
+  const {image} = props;
+  return <View style={slideStyles.slide}>{image}</View>;
 };
 
-const styles = StyleSheet.create({
+export const slideStyles = StyleSheet.create({
   slide: {
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    paddingTop: 30,
+    paddingHorizontal: 10,
+    width: '100%',
+    backgroundColor: '#ccc',
+    paddingBottom: 20,
+    // paddingTop: 30,
     flexBasis: '100%',
     flex: 1,
     maxWidth: '100%',
@@ -24,12 +21,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
-    height: 200,
+    height: 180,
   },
-  slideText: {
+  slideImg: {
     width: '100%',
-    textAlign: 'left',
-    fontSize: 20,
   },
 });
 

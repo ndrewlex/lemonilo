@@ -62,7 +62,7 @@ export const Carousel = (props) => {
         pagingEnabled
         decelerationRate="fast">
         {items.map((item, index) => {
-          return <Slide key={index} title={item.title} />;
+          return <Slide key={index} image={item.image} />;
         })}
       </ScrollView>
       <View style={styles.bullets}>{bullets}</View>
@@ -71,10 +71,10 @@ export const Carousel = (props) => {
 };
 
 export const styles = StyleSheet.create({
-  statsHead: {
-    paddingTop: 10,
-    paddingHorizontal: 12,
-  },
+  //   statsHead: {
+  //     paddingTop: 10,
+  //     paddingHorizontal: 12,
+  //   },
   container: {
     width: '100%',
     backgroundColor: '#fbfbfb',
@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     shadowColor: '#fcfcfc',
     shadowOpacity: 1,
-    marginTop: 10,
+    // marginTop: 10,
     shadowOffset: {
       width: 0,
       height: 5,
@@ -96,17 +96,17 @@ export const styles = StyleSheet.create({
   },
   bullets: {
     position: 'absolute',
-    top: 0,
-    right: 0,
+    bottom: 0,
+    left: 0,
     display: 'flex',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     paddingHorizontal: 10,
-    paddingTop: 5,
+    paddingTop: 10,
   },
   bullet: {
-    paddingHorizontal: 5,
-    fontSize: 20,
+    paddingHorizontal: 3,
+    fontSize: 30,
   },
 });
 
