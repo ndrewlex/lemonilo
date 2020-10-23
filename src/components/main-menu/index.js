@@ -10,18 +10,18 @@ const MainMenu = () => {
         {mainMenuListTop.map((menu, index) => (
           <View style={styles.item} key={index}>
             <menu.icon width={42} height={42} />
-            <Text>{menu.label}</Text>
+            <Text style={styles.text}>{menu.label}</Text>
           </View>
         ))}
       </View>
-      {/* <View style={styles.row}>
+      <View style={styles.row}>
         {mainMenuListBottom.map((menu, index) => (
           <View style={styles.item} key={index}>
-            <menu.link width={42} height={42} />
-            <Text>{menu.label}</Text>
+            <menu.icon width={42} height={42} />
+            <Text style={styles.text}>{menu.label}</Text>
           </View>
         ))}
-      </View> */}
+      </View>
     </View>
   );
 };
@@ -33,6 +33,11 @@ const styles = StyleSheet.create({
     borderColor: colors.gray,
     paddingBottom: 25,
     borderWidth: 0.5,
+  },
+  text: {
+    maxWidth: 70,
+    textAlign: 'center',
+    fontSize: 12,
   },
   row: {
     flex: 1,

@@ -9,7 +9,7 @@ export const slideStyles = StyleSheet.create({
   slide: {
     paddingHorizontal: 10,
     width: '100%',
-    backgroundColor: '#ccc',
+    // backgroundColor: '#ccc',
     paddingBottom: 20,
     // paddingTop: 30,
     flexBasis: '100%',

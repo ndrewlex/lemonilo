@@ -9,38 +9,38 @@ import lainnyaLink from '../../assets/menu/lainnya.svg';
 
 export const mainMenuListTop = [
   {
-    label: 'Lemonilo',
+    label: 'Brand Lemonilo',
     icon: lemoniloLink,
   },
   {
     label: 'Cemilan',
-    icon: lemoniloLink,
+    icon: cemilanLink,
   },
   {
     label: 'Bahan',
-    icon: lemoniloLink,
+    icon: bahanLink,
   },
   {
     label: 'Katering',
-    icon: lemoniloLink,
+    icon: kateringLink,
   },
 ];
 
-// export const mainMenuListBottom = [
-//   {
-//     label: 'Car',
-//     link: carIconLink,
-//   },
-//   {
-//     label: 'Bike',
-//     link: bikeIconLink,
-//   },
-//   {
-//     label: 'Health',
-//     link: healthIconLink,
-//   },
-//   {
-//     label: 'More',
-//     link: moreIconLink,
-//   },
-// ];
+export const mainMenuListBottom = [
+  {
+    label: 'Perawatan',
+    icon: perawatanLink,
+  },
+  {
+    label: 'Ibu & Anak',
+    icon: ibuanakLink,
+  },
+  {
+    label: 'Wiranilo',
+    icon: wiraniloLink,
+  },
+  {
+    label: 'Lainny',
+    icon: lainnyaLink,
+  },
+];
